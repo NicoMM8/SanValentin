@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <title>Feliz Día De San Valentín</title>
+
+    <style>
+        body{
+            background-color: aquamarine;
+        }
+
+        .painel{
+            margin: auto;
+            background-color: beige;
+            width: 500px;
+            height: 500px;
+            border-radius: 20px;
+            text-align: center;
+            padding-top: 50px;
+            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+        }
+
+        #si{
+            position: absolute;
+            height: 40px;
+            width: 60px;
+            background-color: blueviolet;
+            border: 2px solid white;
+            border-radius: 10px;
+            color: white;
+        }
+
+        #no{
+            position: absolute; /* Añade esta línea */
+            height: 40px;
+            width: 60px;
+            background-color: blueviolet;
+            border: 2px solid white;
+            border-radius: 10px;
+            color: white;
+            margin-left: 70px;
+        }
+    </style>
+</head>
+<body>
+    
+    <div class="painel">
+        <h1>Mariangel mi amor..</h1>
+        <h2>¿Te gustaría ser mi San Valentín?</h2>
+
+        <a href="https://www.youtube.com/watch?v=gDKsrIuyZZE&ab_channel=Tecnum"><button id="si" onclick="resultado()"> Sí!! </button></a>
+        <button onmousemove="fuja()" id="no"> No... </button>
+
+        <img src="https://fotocov.com/wp-content/uploads/2021/10/corazon-de-oso-dibujos-stickers-animados.gif" alt="">
+    </div>
+
+    <script>
+
+        var contador = 0; // Añade un contador
+
+        function fuja(){
+            var moverNo = document.getElementById("no")
+
+            var largura = window.innerWidth;
+            var altura = window.innerHeight;
+
+            var maxX = largura- moverNo.offsetWidth;
+            var maxY = altura - moverNo.offsetHeight
+
+            var aleatorioX = Math.floor(Math.random() * maxX);
+            var aleatorioY = Math.floor(Math.random() * maxY);
+
+            moverNo.style.left = aleatorioX + "px";
+            moverNo.style.top = aleatorioY + "px"; 
+
+            contador++; // Incrementa el contador cada vez que se llama a la función
+
+            if(contador >= 14){ // Si el contador llega a 14, esconde el botón
+                moverNo.style.display = "none";
+            }
+        }
+
+        function resultado(){
+        alert("Enhorabuena, te amo :)")
+    }
+    </script>
+
+
+</body>
+</html>
