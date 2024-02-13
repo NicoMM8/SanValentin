@@ -49,6 +49,25 @@
             color: white;
             margin-left: 70px;
         }
+
+        #imagenTriste {
+            display: none;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+
+        #mensajeTriste {
+            display: none;
+            position: absolute;
+            top: 60%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            font-size: 2em;
+            color: red;
+        }
+        
     </style>
 </head>
 <body>
@@ -63,6 +82,9 @@
         <img src="https://fotocov.com/wp-content/uploads/2021/10/corazon-de-oso-dibujos-stickers-animados.gif" alt="">
     </div>
 
+    <img id="imagenTriste" src="https://labradores.org/wp-content/uploads/2021/05/Tristeza-en-los-Perros.jpg" alt="Imagen triste">
+    <p id="mensajeTriste">Que mal, no me quieres :(</p>
+    
     <div id="creditos">
         Made by Nicolás Muñoz Miguel ©
     </div>
@@ -90,6 +112,16 @@
 
             if(contador >= 14){ // Si el contador llega a 14, esconde el botón
                 moverNo.style.display = "none";
+                var imagenTriste = document.getElementById("imagenTriste");
+                var mensajeTriste = document.getElementById("mensajeTriste");
+
+                imagenTriste.style.display = "block";
+                mensajeTriste.style.display = "block";
+
+                setTimeout(function(){
+                    imagenTriste.style.display = "none";
+                    mensajeTriste.style.display = "none";
+                }, 5000);
             }
         }
 
